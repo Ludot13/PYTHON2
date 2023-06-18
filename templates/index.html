@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Catalog</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #00a9a5;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .header button:hover {
+            background-color: #007d7a;
+        }
+
+        .course {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #00a9a5;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #00a9a5;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #007d7a;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <button onclick="window.location.href='/catalog'">Каталог курсов</button>
+        <button onclick="window.location.href='/add'">Добавить курс</button>
+        <button onclick="window.location.href='/info'">Информация</button>
+    </div>
+    {% for course in courses %}
+    <div class="course">
+        <div class="title">{{ course.title }}</div>
+        <div class="description">{{ course.description }}</div>
+        <div class="price">Price: ${{ course.price }}</div>
+        <form action="/signup">
+            <button class="button" type="submit">Sign up</button>
+        </form>
+    </div>
+    {% endfor %}
+</div>
+</body>
+</html>
+
+
+
+
+
