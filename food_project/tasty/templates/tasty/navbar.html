@@ -1,0 +1,23 @@
+{% load static %}
+<!-- Header Section -->
+  <header class="header">
+    <div class="wrap">
+      <div class="container">
+        <a href="{% url 'project' %}" class="header__logo">
+          <img src="{% static 'images/icon.png' %}" alt="DevSearch Logo">
+        </a>
+        <nav class="header__nav">
+          <ul class="header__menu">
+            <li class="header__menuItem"><a href=#>Меню</a></li>
+            <li class="header__menuItem"><a href=#>Примеры</a></li>
+            <li class="header__menuItem"><a href=#>О нас</a></li>
+            <li class="header__menuItem"><a href=#>Отзывы</a></li>
+            <li class="header__menuItem"><a href=#>Доставка</a></li>
+            <li class="header__menuItem"><a href=# class="login">
+              <img src="" alt="icon">
+              <div>Войти</div></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
