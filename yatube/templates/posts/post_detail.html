@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load thumbnail %}
 
-{% block title %}Подробнее о рецепте{% endblock %}
+{% block title %}Подробнее о блоге{% endblock %}
 
 {% block content %}
   <div class="row">
@@ -13,18 +13,18 @@
         {% if post.group %}   
           <li class="list-group-item">
             Группа: {{group}}
-            <a href="{% url 'posts:group_list' post.group.slug %}">все рецепты раздела</a>
+            <a href="{% url 'posts:group_list' post.group.slug %}">все блоги раздела</a>
           </li>
         {% endif %}
         <li class="list-group-item">
           Автор: {{ post.author.get_full_name }}
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">
-          Всего рецептов у автора:  <span >{{post.author.posts.count}}</span>
+          Всего блогов у автора:  <span >{{post.author.posts.count}}</span>
         </li>
         <li class="list-group-item">
           <a href="{% url 'posts:profile' post.author.username %}">
-            все рецепты пользователя
+            все блоги пользователя
           </a>
         </li>
       </ul>
@@ -38,7 +38,7 @@
       </p>
       {% if user == post.author %}
         <a class="btn btn-primary" href="{% url 'posts:update_post' post.pk %}">
-          редактировать рецепт
+          редактировать блог
         </a>
       {% endif %}
       {% if request.user.is_authenticated %}

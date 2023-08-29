@@ -16,7 +16,7 @@
         {% endthumbnail %}
         <p>{{ post.text }}</p>    
         {% if post.group %}   
-          <a href="{% url 'posts:group_list' post.group.slug %}">все рецепты раздела {{post.group}}</a>
+          <a href="{% url 'posts:group_list' post.group.slug %}">все блоги раздела {{post.group}}</a>
         {% endif %}
         {% if not forloop.last %}<hr>{% endif %}
       {% endfor %}

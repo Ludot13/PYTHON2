@@ -7,8 +7,8 @@
 
   <div class="container py-5">
     <div class="mb-5">        
-      <h1>Все рецепты пользователя {{author}} </h1>
-      <h3>Всего рецептов: {{posts.count}} </h3>
+      <h1>Все блоги пользователя {{author}} </h1>
+      <h3>Всего блогов: {{posts.count}} </h3>
       {% if following %}
         <a
           class="btn btn-lg btn-light"
@@ -29,7 +29,7 @@
       <ul>
         <li>
           Автор: {{author}}
-          <a href="{% url 'posts:profile' author %}">все рецепты пользователя</a>
+          <a href="{% url 'posts:profile' author %}">все блоги пользователя</a>
         </li>
         <li>
           Дата публикации: {% for post in post_f%}
@@ -45,7 +45,7 @@
       {%endfor%}
     </article>       
     {% if post.group %}   
-      <a href="{% url 'posts:group_list' post.group.slug %}">все рецепты раздела</a>
+      <a href="{% url 'posts:group_list' post.group.slug %}">все блоги раздела</a>
     {% endif %}        
     <hr>
     {% for post in page_obj %}
