@@ -15,7 +15,7 @@ class Group(models.Model):
 
 class Post(models.Model):
     text = models.TextField('Текст поста',
-                            help_text='Введите текст рецепта')
+                            help_text='Введите текст поста')
     pub_date = models.DateTimeField('Дата публикации', auto_now_add=True)
     TEN_ACTS = 10
     FIRST_POST = 1
@@ -37,8 +37,8 @@ class Post(models.Model):
 
     class Meta:
         ordering = ('-pub_date',)
-        verbose_name = 'Рецепт'
-        verbose_name_plural = 'Рецепты'
+        verbose_name = 'Посты'
+        verbose_name_plural = 'Посты'
 
     def __str__(self):
         return self.text[:15]
@@ -55,8 +55,7 @@ class Comment(models.Model):
     post = models.ForeignKey(Post,
                              on_delete=models.CASCADE,
                              related_name='comments',
-                             verbose_name='Рецепт')
-
+                             verbose_name='Пост')
     class Meta:
         ordering = ('-created',)
         verbose_name = 'Комментарий'
